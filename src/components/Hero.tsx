@@ -1,7 +1,6 @@
 
 import React, { useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { Sphere, MeshDistortMaterial, Float } from '@react-three/drei';
 import { motion } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 import * as THREE from 'three';
@@ -13,21 +12,20 @@ const AnimatedSphere = ({ position }: { position: [number, number, number] }) =>
     if (meshRef.current) {
       meshRef.current.rotation.x = state.clock.elapsedTime * 0.2;
       meshRef.current.rotation.y = state.clock.elapsedTime * 0.1;
-      meshRef.current.position.y = Math.sin(state.clock.elapsedTime) * 0.1;
+      meshRef.current.position.y = position[1] + Math.sin(state.clock.elapsedTime) * 0.1;
     }
   });
 
   return (
-    <Float speed={1.75} rotationIntensity={1} floatIntensity={2}>
-      <Sphere ref={meshRef} args={[1, 100, 200]} position={position}>
-        <MeshDistortMaterial
-          color="#8B5CF6"
-          distort={0.3}
-          speed={1.5}
-          roughness={0.4}
-        />
-      </Sphere>
-    </Float>
+    <mesh ref={meshRef} position={position}>
+      <sphereGeometry args={[1, 32, 32]} />
+      <meshStandardMaterial 
+        color="#8B5CF6"
+        emissive="#8B5CF6"
+        emissiveIntensity={0.2}
+        roughness={0.4}
+      />
+    </mesh>
   );
 };
 
