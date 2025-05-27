@@ -2,7 +2,6 @@
 import React, { useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { motion } from 'framer-motion';
-import { Text } from '@react-three/drei';
 import * as THREE from 'three';
 
 const SkillOrb = ({ position, color, scale }: { position: [number, number, number], color: string, scale: number }) => {

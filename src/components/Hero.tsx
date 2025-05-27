@@ -1,7 +1,7 @@
 
 import React, { useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { Sphere, MeshDistortMaterial, Text, Float } from '@react-three/drei';
+import { Sphere, MeshDistortMaterial, Float } from '@react-three/drei';
 import { motion } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 import * as THREE from 'three';
@@ -22,7 +22,6 @@ const AnimatedSphere = ({ position }: { position: [number, number, number] }) =>
       <Sphere ref={meshRef} args={[1, 100, 200]} position={position}>
         <MeshDistortMaterial
           color="#8B5CF6"
-          attach="material"
           distort={0.3}
           speed={1.5}
           roughness={0.4}
@@ -52,9 +51,7 @@ const ParticleField = () => {
       <bufferGeometry>
         <bufferAttribute
           attach="attributes-position"
-          count={2000}
-          array={particlePositions}
-          itemSize={3}
+          args={[particlePositions, 3]}
         />
       </bufferGeometry>
       <pointsMaterial size={0.02} color="#A855F7" />
