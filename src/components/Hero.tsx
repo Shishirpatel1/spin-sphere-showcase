@@ -92,7 +92,7 @@ export const Hero = () => {
             animate={{ scale: 1 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            John Doe
+            Shishir Patel
           </motion.h1>
           
           <motion.p 
