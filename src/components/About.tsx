@@ -37,7 +37,7 @@ export const About = () => {
           </h2>
           <p className="text-xl text-white/80 max-w-3xl mx-auto leading-relaxed">
             I'm a passionate developer who loves creating beautiful, functional, and innovative digital experiences. 
-            With expertise in modern web technologies and 3D graphics, I bring ideas to life through code and creativity.
+            With expertise in modern web technologies , I bring ideas to life through code and creativity.
           </p>
         </motion.div>
 
