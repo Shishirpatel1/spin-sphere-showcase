@@ -31,19 +31,19 @@ export const Contact = () => {
     {
       icon: <Mail className="w-6 h-6" />,
       title: "Email",
-      value: "john.doe@example.com",
+      value: "Shishir singh patel",
       href: "mailto:john.doe@example.com"
     },
     {
       icon: <Phone className="w-6 h-6" />,
       title: "Phone",
-      value: "+1 (555) 123-4567",
+      value: "+917376283738",
       href: "tel:+15551234567"
     },
     {
       icon: <MapPin className="w-6 h-6" />,
       title: "Location",
-      value: "San Francisco, CA",
+      value: "Prayagraj, btech",
       href: "#"
     }
   ];
